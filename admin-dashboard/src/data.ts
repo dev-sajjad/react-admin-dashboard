@@ -568,7 +568,7 @@ export const products = [
 export const singleUser = {
   id: 1,
   title: "John Doe",
-  img: "https://images.pexels.com/photos/17397364/pexels-photo-17397364.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+  img: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
   info: {
     username: "Johndoe99",
     fullname: "John Doe",

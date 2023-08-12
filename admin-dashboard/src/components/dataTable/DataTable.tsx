@@ -5,6 +5,11 @@ import {
 } from "@mui/x-data-grid";
 import "./dataTable.scss";
 import { Link } from "react-router-dom";
+// import {
+//   useQueryClient,
+//   useMutation
+// } from "@tanstack/react-query";
+
 
 type Props = {
     columns: GridColDef[],
@@ -13,9 +18,20 @@ type Props = {
 }
 
 const DataTable = (props: Props) => {
+  // const queryClient =  useQueryClient();
 
-    const handleDelete = (id: number) => {
-        alert("ID: " + id + " has been deleted");
+  // const mutation = useMutation({
+  //     mutationFn: (id: number) => {
+  //       return fetch(`http://localhost:5000/api/${props.slug}/${id}`, { method: 'DELETE' });
+  //   },
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries([`all${props.slug}`]);
+  //   }
+  // })
+
+    const handleDelete = () => {
+        //delete the item 
+      // mutation.mutate(id)
     }
 
   const actionColumn: GridColDef = {
@@ -25,12 +41,12 @@ const DataTable = (props: Props) => {
     renderCell: (params) => {
       return (
         <div className="action">
-              <Link to={`/${props.slug}/${params.row.id}`}>
-                <img src='/view.svg' alt="" />
-              </Link>
-              <div className="delete">
-                  <img src="/delete.svg" onClick={()=>handleDelete(params.row.id)} alt="" />
-              </div>
+          <Link to={`/${props.slug}/${params.row.id}`}>
+            <img src="/view.svg" alt="" />
+          </Link>
+          <div className="delete" onClick={() => handleDelete()}>
+            <img src="/delete.svg" alt="" />
+          </div>
         </div>
       );
     },

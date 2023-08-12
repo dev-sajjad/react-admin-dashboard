@@ -3,6 +3,7 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Home from "./pages/home/Home";
 import Users from "./pages/users/Users";
@@ -15,6 +16,8 @@ import './styles/global.scss';
 import Product from "./pages/product/Product";
 import User from "./pages/user/User";
 
+const queryClient = new QueryClient();
+
 function App() {
 
   const Layout = () => {
@@ -26,7 +29,9 @@ function App() {
             <Menu />
           </div>
           <div className="contentContainer">
+            <QueryClientProvider client={queryClient}>
             <Outlet />
+              </QueryClientProvider>
           </div>
         </div>
         <Footer />
