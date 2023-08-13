@@ -16,6 +16,10 @@ a {
     font-family: "Inter", sans-serif;
     background-color: $main-bg;
     color: $main-color;
+
+    @include sm {
+        width: fit-content;
+    }
 }
 
 .container {
